@@ -9,7 +9,7 @@ def env(name, default=None):
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = env(DJANGO_BASE_DIR,Path(__file__).resolve().parent.parent)
 
 DEBUG = os.getenv("DEBUG", "0") == "1"
 ALLOWED_HOSTS = ["*"]
