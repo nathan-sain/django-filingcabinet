@@ -82,7 +82,7 @@ django==4.1.1
     #   django-taggit
     #   django-treebeard
     #   djangorestframework
-django-filingcabinet==0.0.1
+-e django-filingcabinet @ git+https://github.com/nathan-sain/django-filingcabinet.git
     # via
     #   fcdocs
     #   fcdocs-annotate
