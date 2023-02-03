@@ -26,7 +26,7 @@ api_router.register(r"page", PageViewSet, basename="page")
 api_router.register(r"pageannotation", PageAnnotationViewSet, basename="pageannotation")
 
 
-urlpatterns = [
+url_patterns = [
     path("admin/", admin.site.urls),
     path("documents/", include("filingcabinet.urls")),
     path("api/", include((api_router.urls, "api"))),
@@ -40,7 +40,7 @@ if not settings.DEBUG:
     else:
         MEDIA_PATH = MEDIA_PATH[1:]
 
-    urlpatterns += [
+    url_patterns += [
         re_path(
             r"^%s%s/(?P<u1>[a-z0-9]{2})/(?P<u2>[a-z0-9]{2})/(?P<u3>[a-z0-9]{2})/(?P<uuid>[a-z0-9]{32})/(?P<filename>.+)"
             % (MEDIA_PATH, settings.FILINGCABINET_MEDIA_PRIVATE_PREFIX),
